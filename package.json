@@ -1,6 +1,7 @@
 {
   "name": "livraria",
   "version": "1.0.0",
+  "type": "module",
   "description": "Backend NodeJS",
   "main": "index.js",
   "scripts": {

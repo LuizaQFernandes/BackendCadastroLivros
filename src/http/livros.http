@@ -1,0 +1,44 @@
+@baseURL = http://localhost:4000/api
+@nome = 'Livro oo'
+
+###
+// GET - listar todos livros
+GET {{baseURL}}/livros
+Content-Type: application/json
+
+###
+//GET lista apenas um livro pelo nome
+GET {{baseURL}}/livros/{{nome}}
+Content-Type: application/json
+
+###
+//POST - Inclui um novo livro
+POST {{baseURL}}/livros
+Content-Type: application/json
+
+{
+    "nome": "Livroo ", 
+    "autor": "C. S. Lewis", 
+    "paginas": 456, 
+    "sinopse": "Livroo", 
+    "preco": 19
+}
+
+###
+//PUT - altera dados 
+PUT {{baseURL}}/livros
+Content-Type: application/json
+
+{
+    "nome": "Livroo ", 
+    "autor": "C. S. Lewis", 
+    "paginas": 4956, 
+    "sinopse": "Livroo", 
+    "preco": 19
+}
+
+###
+//DELETE 
+DELETE {{baseURL}}/livros/{{nome}}
+Content-Type: application/json
+
