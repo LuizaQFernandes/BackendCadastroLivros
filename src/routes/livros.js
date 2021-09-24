@@ -73,7 +73,7 @@ router.post("/", (req, res) => {
  * PUT /livros
  * altera os dados de um livro
  *****************************************/
-router.post("/", (req, res) => {
+router.put("/", (req, res) => {
     sql.connect(sqlConfig).then(pool => {
         const {nome, autor, paginas, sinopse, preco} = req.body
         return pool.request()
@@ -96,7 +96,7 @@ router.post("/", (req, res) => {
  * DELETE /livros/:nome
  * Apaga um livro pelo nome
  *****************************************/
-router.delete('/:nome',(req, res) => {
+router.delete('/:nome', (req, res) => {
     sql.connect(sqlConfig).then(pool => {
         const nome = req.params.nome
         return pool.request()
@@ -104,7 +104,8 @@ router.delete('/:nome',(req, res) => {
         .execute('SP_D_LIV_CADASTROLIVRO')
 
     }).then(dados => {
-        res.status(200).json('Livro excluido com sucesso!')
+        res.status(200)
+        .json('Livro excluido com sucesso!')
 
     }).catch(err => {
 
