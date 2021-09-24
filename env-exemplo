@@ -1,0 +1,4 @@
+DB_USER=usuario
+DB_PASS=sua senha
+DB_NAME=nome do banco de dados
+DB_SERVER=localhost
