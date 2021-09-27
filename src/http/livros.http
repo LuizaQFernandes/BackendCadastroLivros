@@ -1,5 +1,5 @@
 @baseURL = http://localhost:4000/api
-@nome = Anne de Green Gables
+@nome = JK Rowling
 
 ###
 // GET - listar todos livros
