@@ -7,7 +7,7 @@ GET {{baseURL}}/livros
 Content-Type: application/json
 
 ###
-//GET lista apenas um livro pelo nome
+//GET lista apenas um livro pelo nome ou mais de um pelo autor
 GET {{baseURL}}/livros/{{nome}}
 Content-Type: application/json
 
