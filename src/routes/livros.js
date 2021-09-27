@@ -61,7 +61,7 @@ router.post("/", (req, res) => {
 
         .execute('SP_I_LIV_CADASTROLIVRO')
     }).then(dados => {
-        res.status(200).json(dados.output)
+        res.status(200).json('livro incluído com sucesso!')
 
     }).catch(err => {
         res.status(400).json(err.message)
