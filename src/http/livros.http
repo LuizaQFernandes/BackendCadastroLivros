@@ -1,5 +1,5 @@
 @baseURL = http://localhost:4000/api
-@nome = Anne de Green Gables 2
+@nome = JK Rowling
 
 ###
 // GET - listar todos livros
@@ -10,6 +10,7 @@ Content-Type: application/json
 //GET lista apenas um livro pelo nome ou mais de um pelo autor
 GET {{baseURL}}/livros/{{nome}}
 Content-Type: application/json
+
 
 ###
 //POST - Inclui um novo livro

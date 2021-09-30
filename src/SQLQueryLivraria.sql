@@ -46,7 +46,7 @@ CREATE PROCEDURE SP_S_LIV_CADASTROLIVRO_NOME
 AS
 
 SELECT CAD_IN_CODIGO AS 'CÓDIGO', CAD_ST_NOME AS 'NOME', CAD_ST_AUTOR AS 'AUTOR(A)',  
-CAD_IN_PAGINAS AS 'N° DE PÁGINAS', CAD_ST_SINOPSE AS 'SINOPSE', CAD_RE_PRECO AS 'PREÇO', CAD_DT_DATAINCLUSAO AS 'DATA DE INCLUSÃO', dbo.FN_VALORFRETE(@NOME) AS 'FRETE'
+CAD_IN_PAGINAS AS 'N° DE PÁGINAS', CAD_ST_SINOPSE AS 'SINOPSE', CAD_RE_PRECO AS 'PREÇO', CAD_DT_DATAINCLUSAO AS 'DATA DE INCLUSÃO', dbo.FN_VALORFRETE(CAD_ST_NOME) AS 'FRETE'
 FROM LIV_CADASTROLIVRO
 WHERE UPPER(TRIM(@NOME)) = UPPER(TRIM(CAD_ST_NOME)) OR UPPER(TRIM(@NOME)) = UPPER(TRIM(CAD_ST_AUTOR))
 
@@ -182,6 +182,25 @@ SP_D_LIV_CADASTROLIVRO 'Anne de Avonlea'
 SP_S_LIV_CADASTROLIVRO
 
 /*FUN��O*/
+
+/*Função - Cálculo de frete
+O valor do frete é calculado com base na data 
+de inclusão, ou seja, livros que estão no catálogo há 
+mais tempo tem um frete mais barato
+
+SE O LIVRO FOI ADICIONADO NO MESMO DIA, o valor do frete 
+será 30% do valor do livro
+
+SE O LIVRO FOI ADICIONADO entre 1 e 10 dias atras, o valor
+do frete é 20% do valor do livro
+
+SE O LIVRO FOI ADICIONADO entre 10 e 20 dias atras, o valor
+do frete é de 10% do preço do livro
+
+SE O LIVRO FOI ADICIONADO mais de 20 dias atras, 
+o frete é gratuito
+
+*/
 
 CREATE FUNCTION FN_VALORFRETE
 (@NOME VARCHAR(50))
