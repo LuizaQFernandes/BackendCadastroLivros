@@ -105,7 +105,7 @@ router.delete('/:nome', (req, res) => {
 
     }).then(dados => {
         res.status(200)
-        .json('Livro excluido com sucesso!')
+        .json('Livro excluído com sucesso!')
 
     }).catch(err => {
 

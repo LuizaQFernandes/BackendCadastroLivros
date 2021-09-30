@@ -1,5 +1,6 @@
 @baseURL = http://localhost:4000/api
-@nome = JK Rowling
+@nome = Harry Potter e a Pedra Filosofal
+//@nome = Anne de Avonlea
 
 ###
 // GET - listar todos livros
@@ -18,11 +19,11 @@ POST {{baseURL}}/livros
 Content-Type: application/json
 
 {
-    "nome": "Anne de Green Gables 3" , 
-    "autor": "C. S. Lewis", 
-    "paginas": 456, 
-    "sinopse": "Livroo", 
-    "preco": 19
+    "nome": "Anne de Avonlea" , 
+    "autor": "Montgomery", 
+    "paginas": 288, 
+    "sinopse": "Agora com 16 anos, sentindo-se quase adulta, Anne está prestes a começar a lecionar na escola de Avonlea", 
+    "preco": 8.68
 }
 
 ###
@@ -31,11 +32,11 @@ PUT {{baseURL}}/livros
 Content-Type: application/json
 
 {
-    "nome": "Anne de Green Gables ", 
-    "autor": "Montgonomery", 
-    "paginas": 4956, 
-    "sinopse": "Livroo", 
-    "preco": 19
+    "nome": "Anne de Avonlea", 
+    "autor": "Montgomery", 
+    "paginas": 290, 
+    "sinopse": "Agora com 16 anos, sentindo-se quase adulta, Anne está prestes a começar a lecionar na escola de Avonlea", 
+    "preco": 9.39
 }
 
 ###
