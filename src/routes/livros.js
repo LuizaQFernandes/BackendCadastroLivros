@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
 
 /***************************************** 
  * GET /livros/:nome
- * Retornar um livro através do nome
+ * Retornar um ou mais livros através do título ou nome do autor
  *****************************************/
  
 router.get("/:nome", (req, res) => {
